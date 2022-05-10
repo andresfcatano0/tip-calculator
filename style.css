@@ -1,0 +1,49 @@
+body {
+	color: white;
+	text-align: center;
+	font-size: 25px;
+	background: #c31432;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+
+h1 {
+	padding-top: 20px;
+}
+
+label {
+	display: block;
+}
+
+#bill, #people, #tip {
+	opacity: 0.5;
+	font-size: 25px;
+	outline: none;
+	text-align: center;
+	width: 150px;
+}
+
+.text-field {
+	padding-bottom: 25px;
+}
+
+button {
+	background-color: #321456;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: all .2s ease-in-out;
+}
+
+button:hover {
+	transform: scale(1.2);
+}
+
+
+
+
+

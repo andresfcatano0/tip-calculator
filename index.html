@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>tips calculator</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Tip Calculator</h1>
+
+	<form autocomplete="off">
+		<div class="text-field">
+			<label for="bill"><span>Bill amount</span></label>
+			<input type="text" id="bill">
+		</div>
+		<div class="text-field">
+			<label for="tip"><span>Tip %</span></label>
+			<input type="text" id="tip">
+		</div>
+		<div class="text-field">
+			<label for="people"><span>Number of people</span></label>
+			<input type="text" id="people">
+		</div>
+		<button type="button">Calculate</button>
+	</form>
+
+	<p>Total tip is: $<span id="totalTip">0</span></p>
+
+	<p>Total bill is: $<span id="totalBill">0</span></p>
+
+	<p id="split"></p>
+
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
