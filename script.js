@@ -7,20 +7,34 @@ let totalTip = document.querySelector("#totalTip");
 let totalBill = document.querySelector("#totalBill");
 let split = document.querySelector("#split");
 
-function calculateTip(){
+function billCalculation(){
+	totalTip.innerHTML = Number(bill.value) * (Number(tip.value) * .01);
+	totalBill.innerHTML = Number(bill.value) * (Number(tip.value) * .01) + Number(bill.value);
+}
+
+function splitCalculation(){
+	split.innerHTML = people.value + " people pay $" + Math.round(totalBill.innerHTML / people.value) + " each";
+}
+
+function calculateTotals(){
 	if (Number(people.value) == 0){
-		totalTip.innerHTML = Number(bill.value) * (Number(tip.value) * .01);
-		totalBill.innerHTML = Number(bill.value) * (Number(tip.value) * .01) + Number(bill.value);
+		billCalculation();
+		split.innerHTML = "";
+		return false;
+	} else if (Number(people.value) == 1) {
+		billCalculation();
+		split.innerHTML = "One person pays $" + Math.round(totalBill.innerHTML / people.value);
 		return false;
 	} else {
-		totalTip.innerHTML = Number(bill.value) * (Number(tip.value) * .01);
-		totalBill.innerHTML = Number(bill.value) * (Number(tip.value) * .01) + Number(bill.value);
-		split.innerHTML = people.value + " people pay $" + totalBill.innerHTML / people.value + " each"; 
+		billCalculation();
+		splitCalculation();
 		return false;
 	}
 }
 
+
 button.addEventListener("click", function(){
-	calculateTip();
+	calculateTotals();
 })
+
 
