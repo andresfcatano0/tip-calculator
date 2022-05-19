@@ -7,31 +7,26 @@ let totalTip = document.querySelector("#totalTip");
 let totalBill = document.querySelector("#totalBill");
 let split = document.querySelector("#split");
 
-function billCalculation(){
+const billCalculation = () => {
 	totalTip.innerHTML = Number(bill.value) * (Number(tip.value) * .01);
 	totalBill.innerHTML = Number(bill.value) * (Number(tip.value) * .01) + Number(bill.value);
 }
 
-function splitCalculation(){
+const splitCalculation = () => {
 	split.innerHTML = people.value + " people pay $" + Math.round(totalBill.innerHTML / people.value) + " each";
 }
 
-function calculateTotals(){
-	if (Number(people.value) == 0){
-		billCalculation();
-		split.innerHTML = "";
-		return false;
-	} else if (Number(people.value) == 1) {
+const calculateTotals = () => {
+	if (Number(people.value) == 1) {
 		billCalculation();
 		split.innerHTML = "One person pays $" + Math.round(totalBill.innerHTML / people.value);
-		return false;
 	} else {
 		billCalculation();
 		splitCalculation();
-		return false;
 	}
 }
 
+//Check that all inputs are valid numbers
 button.addEventListener("click", function(){
 	if ((tip.value !== NaN && tip.value > 0) && 
 		(bill.value !== NaN && bill.value > 0) && 
