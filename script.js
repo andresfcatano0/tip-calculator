@@ -32,9 +32,17 @@ function calculateTotals(){
 	}
 }
 
-
 button.addEventListener("click", function(){
-	calculateTotals();
+	if ((tip.value !== NaN && tip.value > 0) && 
+		(bill.value !== NaN && bill.value > 0) && 
+		(people.value !== NaN && people.value > 0)){
+			calculateTotals();
+	} else {
+ 		split.innerHTML = "";
+ 		totalTip.innerHTML = "0";
+ 		totalBill.innerHTML = "0";
+ 		alert("Please enter positve numbers in all fields");
+ 	}
 })
 
 
